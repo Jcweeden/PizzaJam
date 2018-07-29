@@ -59,4 +59,6 @@ void InputHandler::update()
 
 void InputHandler::clean()
 {
+  isSpaceKeyPressed = false;
+  delete s_pInstance;
 }

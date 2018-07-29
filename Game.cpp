@@ -105,12 +105,7 @@ void Game::clean() {
 
   m_gameObjects.clear();
 
-  //destroy fonts
-  /*
-  SDL_DestroyTexture(scoreText);
-  SDL_DestroyTexture(highScoreText);
-  TTF_Quit();
-  */
+  TheInputHandler::Instance()->clean();
   
   SDL_DestroyWindow (m_pWindow);
   SDL_DestroyRenderer (m_pRenderer);

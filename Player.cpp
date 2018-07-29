@@ -15,6 +15,17 @@ void Player::update()
   OrbitingObject::update();
 }
 
+void Player::draw()
+{
+  if (OrbitingObject::isRotatingClockwise)
+  {
+    TheTextureManager::Instance()->draw(textureID, (int)position.getX()- width/2, (int)position.getY() -height/2, width, height, /*m_currentRow, m_currentFrame,*/ TheGame::Instance()->getRenderer(), SDL_FLIP_HORIZONTAL);
+  }
+  else
+  {
+    GameObject::draw();
+  }
+}
 
 void Player::handleInput()
 { 

@@ -16,8 +16,11 @@ class GameObject : public I_GameObject {
 public:
 
   GameObject(int x, int y, int p_width, int p_height, std::string textureID, int p_numFrames);
-   
+//~GameObject();
+
+
   virtual void draw();
+  virtual void drawFrame();
   virtual void update();
   virtual void clean();
 
@@ -25,6 +28,11 @@ public:
 
 int getWidth() { return width; }
 int getHeight() { return height; }
+
+virtual void setFrame(int frame) { currentFrame = frame;}
+int getFrame() { return currentFrame;}
+
+void setRow(int row) { currentRow = row;}
 
 protected:
 

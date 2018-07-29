@@ -15,8 +15,7 @@ public:
 
   void draw(std::string id, int x, int y, int width, int height, SDL_Renderer* pRenderer, SDL_RendererFlip flip);
 
-  void drawThreeWide(std::string id, int x, int y, int width, int height, SDL_Renderer* pRenderer, SDL_RendererFlip flip);
-
+  void drawFrame(std::string id, int x, int y, int width, int height, int currentFrame, SDL_Renderer* pRenderer, int currentRow = 1, SDL_RendererFlip flip = SDL_FLIP_NONE);
   
   bool load(std::string file, std::string mapID, SDL_Renderer* pRenderer);
 

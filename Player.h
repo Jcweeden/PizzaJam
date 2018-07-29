@@ -20,8 +20,10 @@ public:
                  float p_startingAngle, bool p_isRotatingClockwise, float p_angleIncrementVal);
 
   virtual void update();
+  virtual void draw();
 
   void handleInput();
+
   
 
 public:

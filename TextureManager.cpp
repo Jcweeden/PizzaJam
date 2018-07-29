@@ -40,8 +40,6 @@ bool TextureManager::load(std::string file, std::string mapID, SDL_Renderer* pRe
 void TextureManager:: draw(std::string mapID, int x, int y, int width, int height, SDL_Renderer* pRenderer, SDL_RendererFlip flip)
 {
 
-  flip = SDL_FLIP_NONE;
-  
   SDL_Rect srcRect;
   SDL_Rect destRect;
 
@@ -54,6 +52,21 @@ void TextureManager:: draw(std::string mapID, int x, int y, int width, int heigh
   destRect.y = y;
 
   SDL_RenderCopyEx(pRenderer, textureMap[mapID], &srcRect, &destRect, 0, 0, flip);
+}
+
+void TextureManager::drawFrame(std::string id, int x, int y, int width, int height, int currentFrame, SDL_Renderer* pRenderer, int currentRow, SDL_RendererFlip flip) {
+  
+  SDL_Rect srcRect;
+  SDL_Rect destRect;
+  //std::cout << currentFrame << " " << currentRow << std::endl;
+  srcRect.x = width * currentFrame;
+  srcRect.y = height * (currentRow-1);
+  srcRect.w = destRect.w = width;
+  srcRect.h = destRect.h = height;
+  destRect.x = x;
+  destRect.y = y;
+
+  SDL_RenderCopyEx(pRenderer, textureMap[id], &srcRect, &destRect, 0, 0, flip);
 }
 
 void TextureManager::clearFromTextureMap(std::string id)
