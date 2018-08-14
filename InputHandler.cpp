@@ -59,6 +59,7 @@ void InputHandler::update()
 
 void InputHandler::clean()
 {
+  m_keystates = SDL_GetKeyboardState(0);//update presssed keysym
   isSpaceKeyPressed = false;
   delete s_pInstance;
 }

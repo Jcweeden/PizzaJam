@@ -36,7 +36,7 @@ public:
   
 private:
 
-  InputHandler(){};
+  InputHandler(){isSpaceKeyPressed = false;};
   
   static InputHandler* s_pInstance;
 
